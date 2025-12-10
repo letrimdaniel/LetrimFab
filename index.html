@@ -13,17 +13,21 @@
   <body>
     <nav>
       <a href="index.html" class="logo">LETRIM</a>
+      <div class="nav-right">
+        <button class="cart-btn" onclick="toggleCart()">
+          🛒 Cart <span id="cart-count" class="cart-count">0</span>
+        </button>
+
+        <button class="hamburger" aria-label="Toggle menu" aria-expanded="false" onclick="toggleNav()">
+          <span class="hamburger-box"><span class="hamburger-inner"></span></span>
+        </button>
+      </div>
       <div class="nav-links">
         <a href="index.html" class="nav-link">Home</a>
         <a href="#about" class="nav-link">About</a>
         <a href="#fabrics" class="nav-link">Fabrics</a>
         <a href="contact.html" class="nav-link">Contact</a>
         <a href="privacy.html" class="nav-link">Privacy</a>
-      </div>
-      <div class="nav-right">
-        <button class="cart-btn" onclick="toggleCart()">
-          🛒 Cart <span id="cart-count" class="cart-count">0</span>
-        </button>
       </div>
     </nav>
 
@@ -126,4 +130,5 @@
     <script src="script.js"></script>
   </body>
 </html>
+
 
