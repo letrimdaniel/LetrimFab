@@ -716,6 +716,28 @@ footer p {
     display: none;
   }
 
+  /* When the hamburger opens, show the nav items as a vertical list */
+  .nav-links.open {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 64px;
+    left: 12px;
+    right: 12px;
+    background: white;
+    padding: 12px;
+    border-radius: 8px;
+    box-shadow: var(--shadow-lg);
+    z-index: 999;
+  }
+
+  .nav-links.open .nav-link {
+    display: block;
+    padding: 8px 12px;
+    border-radius: 6px;
+    color: var(--text-dark);
+  }
+
   .nav-links .nav-cart {
     display: inline-flex;
     align-items: center;
