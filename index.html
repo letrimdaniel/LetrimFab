@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Letrim Fabrics | Premium Textiles & Fabrics</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <nav>
+      <a href="index.html" class="logo">LETRIM</a>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#fabrics" class="nav-link">Fabrics</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+        <a href="privacy.html" class="nav-link">Privacy</a>
+      </div>
+      <div class="nav-right">
+        <button class="cart-btn" onclick="toggleCart()">
+          🛒 Cart <span id="cart-count" class="cart-count">0</span>
+        </button>
+      </div>
+    </nav>
+
+    <header class="hero">
+      <div class="carousel">
+        <img
+          id="carousel-image"
+          src=""
+          alt="Featured Fabric"
+          class="carousel-img"
+        />
+        <button class="carousel-btn prev" onclick="prevCarousel()">❮</button>
+        <button class="carousel-btn next" onclick="nextCarousel()">❯</button>
+        <div class="carousel-dots"></div>
+      </div>
+      <div class="hero-content">
+        <h1>Weave Your Dreams</h1>
+        <p>Premium silks, cottons, linens & more for every creator</p>
+      </div>
+    </header>
+
+    <section class="features">
+      <div class="features-grid">
+        <div class="feature-item">
+          <div class="feature-icon">✂️</div>
+          <h3>Premium Quality</h3>
+          <p>Handpicked fabrics from around the world</p>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">🚚</div>
+          <h3>Fast Shipping</h3>
+          <p>Quick delivery to your doorstep</p>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">💰</div>
+          <h3>Best Prices</h3>
+          <p>Competitive rates without compromise</p>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">✨</div>
+          <h3>Expert Support</h3>
+          <p>Helpful advice from fabric specialists</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="container" id="fabrics">
+      <h2 class="section-title">Featured Fabrics</h2>
+      <p class="section-subtitle">
+        Discover our curated collection of premium textiles
+      </p>
+      <div id="product-grid" class="product-grid"></div>
+    </section>
+
+    <section class="about" id="about">
+      <h2>About Letrim Fabrics</h2>
+      <p>
+        We are passionate about connecting creators with the world's finest
+        fabrics. From luxurious silks to durable linens, every piece in our
+        collection is carefully selected for quality, beauty, and authenticity.
+        Whether you're a designer, tailor, or craft enthusiast, we have the
+        perfect fabric for your next project.
+      </p>
+    </section>
+
+    <div id="cart-overlay" class="cart-overlay">
+      <div class="cart-sidebar">
+        <div class="cart-header">
+          <h3>Your Cart</h3>
+          <button class="close-cart" onclick="toggleCart()">&times;</button>
+        </div>
+        <div id="cart-items" class="cart-items">
+          <p style="text-align: center; margin-top: 20px; color: #999">
+            Your cart is empty.
+          </p>
+        </div>
+        <div class="cart-footer">
+          <div class="total-price">
+            <span>Total:</span>
+            <span id="cart-total">$0.00</span>
+          </div>
+          <button
+            class="checkout-btn"
+            onclick="alert('Proceeding to checkout...')"
+          >
+            Proceed to Checkout
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div id="toast" class="toast">Item added to cart!</div>
+
+    <footer>
+      <p>
+        &copy; 2024 Letrim Fabrics. All Rights Reserved. | Crafted with care for
+        creators worldwide.
+      </p>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>

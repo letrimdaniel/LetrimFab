@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us | Letrim Fabrics</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .contact-section {
+        max-width: 800px;
+        margin: 60px auto;
+        padding: 40px 20px;
+        background: white;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+      }
+
+      .contact-section h1 {
+        text-align: center;
+        color: var(--primary);
+        margin-bottom: 40px;
+        font-size: 2.5rem;
+      }
+
+      .contact-info {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+        margin-bottom: 50px;
+      }
+
+      .contact-item {
+        text-align: center;
+      }
+
+      .contact-item h3 {
+        color: var(--primary);
+        margin-bottom: 15px;
+        font-size: 1.2rem;
+      }
+
+      .contact-item p {
+        color: var(--text-light);
+        font-size: 1.1rem;
+        margin-bottom: 10px;
+      }
+
+      .contact-item a {
+        color: var(--accent);
+        text-decoration: none;
+        font-weight: 600;
+        transition: color 0.3s ease;
+      }
+
+      .contact-item a:hover {
+        color: var(--primary);
+      }
+
+      .contact-form {
+        background: var(--light-bg);
+        padding: 30px;
+        border-radius: 8px;
+        margin-top: 40px;
+      }
+
+      .form-group {
+        margin-bottom: 20px;
+      }
+
+      .form-group label {
+        display: block;
+        margin-bottom: 8px;
+        color: var(--primary);
+        font-weight: 600;
+      }
+
+      .form-group input,
+      .form-group textarea {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-family: "Poppins", sans-serif;
+        font-size: 0.95rem;
+        transition: border-color 0.3s ease;
+      }
+
+      .form-group input:focus,
+      .form-group textarea:focus {
+        outline: none;
+        border-color: var(--accent);
+        box-shadow: 0 0 5px rgba(193, 122, 107, 0.2);
+      }
+
+      .form-group textarea {
+        resize: vertical;
+        min-height: 150px;
+      }
+
+      .submit-btn {
+        width: 100%;
+        padding: 14px;
+        background: linear-gradient(135deg, var(--primary), var(--accent));
+        color: white;
+        border: none;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        border-radius: 4px;
+        transition: all 0.3s ease;
+      }
+
+      .submit-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+      }
+
+      @media (max-width: 768px) {
+        .contact-section {
+          margin: 40px auto;
+          padding: 25px 15px;
+        }
+
+        .contact-section h1 {
+          font-size: 1.8rem;
+        }
+
+        .contact-info {
+          grid-template-columns: 1fr;
+          gap: 25px;
+          margin-bottom: 30px;
+        }
+
+        .contact-form {
+          padding: 20px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .contact-section {
+          margin: 30px auto;
+          padding: 20px 12px;
+        }
+
+        .contact-section h1 {
+          font-size: 1.4rem;
+        }
+
+        .contact-item h3 {
+          font-size: 1rem;
+        }
+
+        .contact-item p {
+          font-size: 0.95rem;
+        }
+
+        .contact-form {
+          padding: 15px;
+        }
+
+        .form-group label {
+          font-size: 0.9rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
+          padding: 10px;
+          font-size: 0.9rem;
+        }
+
+        .submit-btn {
+          padding: 12px;
+          font-size: 0.9rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <a href="index.html" class="logo">LETRIM</a>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="index.html#about" class="nav-link">About</a>
+        <a href="index.html#fabrics" class="nav-link">Fabrics</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+        <a href="privacy.html" class="nav-link">Privacy</a>
+      </div>
+      <div class="nav-right">
+        <button class="cart-btn" onclick="toggleCart()">
+          🛒 Cart <span id="cart-count" class="cart-count">0</span>
+        </button>
+      </div>
+    </nav>
+
+    <section class="contact-section">
+      <h1>Get In Touch</h1>
+
+      <div class="contact-info">
+        <div class="contact-item">
+          <h3>📞 Phone</h3>
+          <p><a href="tel:+2347032834269">+234 703 283 4269</a></p>
+        </div>
+        <div class="contact-item">
+          <h3>📧 Email</h3>
+          <p><a href="mailto:chiletrim@gmail.com">chiletrim@gmail.com</a></p>
+        </div>
+      </div>
+
+      <h2
+        style="text-align: center; color: var(--primary); margin: 50px 0 30px"
+      >
+        Send us a Message
+      </h2>
+
+      <form class="contact-form" onsubmit="handleSubmit(event)">
+        <div class="form-group">
+          <label for="name">Your Name</label>
+          <input type="text" id="name" name="name" required />
+        </div>
+
+        <div class="form-group">
+          <label for="email">Your Email</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Phone Number (Optional)</label>
+          <input type="tel" id="phone" name="phone" />
+        </div>
+
+        <div class="form-group">
+          <label for="subject">Subject</label>
+          <input type="text" id="subject" name="subject" required />
+        </div>
+
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" required></textarea>
+        </div>
+
+        <button type="submit" class="submit-btn">Send Message</button>
+      </form>
+    </section>
+
+    <footer>
+      <p>
+        &copy; 2024 Letrim Fabrics. All Rights Reserved. | Crafted with care for
+        creators worldwide.
+      </p>
+    </footer>
+
+    <script>
+      function handleSubmit(event) {
+        event.preventDefault();
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const phone = document.getElementById("phone").value;
+        const subject = document.getElementById("subject").value;
+        const message = document.getElementById("message").value;
+
+        const mailtoLink = `mailto:chiletrim@gmail.com?subject=${encodeURIComponent(
+          subject
+        )}&body=${encodeURIComponent(
+          `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\n\n${message}`
+        )}`;
+        window.location.href = mailtoLink;
+      }
+
+      function toggleCart() {
+        alert("Shopping cart feature requires login.");
+      }
+    </script>
+  </body>
+</html>
