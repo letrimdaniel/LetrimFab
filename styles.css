@@ -43,6 +43,7 @@ nav {
   color: var(--primary);
   text-decoration: none;
   letter-spacing: 2px;
+  margin-right: auto;
 }
 
 .nav-links {
@@ -67,6 +68,71 @@ nav {
   display: flex;
   gap: 30px;
   align-items: center;
+}
+
+/* Hamburger button */
+.hamburger {
+  display: none; /* shown on small screens */
+  background: none;
+  border: none;
+  width: 44px;
+  height: 44px;
+  padding: 8px;
+  cursor: pointer;
+}
+
+.hamburger-box {
+  display: inline-block;
+  position: relative;
+  width: 28px;
+  height: 18px;
+}
+
+.hamburger-inner,
+.hamburger-inner::before,
+.hamburger-inner::after {
+  width: 28px;
+  height: 3px;
+  background-color: var(--text-dark);
+  border-radius: 3px;
+  position: absolute;
+  left: 0;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.hamburger-inner {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.hamburger-inner::before {
+  content: '';
+  top: -9px;
+}
+
+.hamburger-inner::after {
+  content: '';
+  top: 9px;
+}
+
+/* Active/open state */
+.nav-links.open {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 64px;
+  right: 12px;
+  background: white;
+  padding: 12px;
+  border-radius: 8px;
+  box-shadow: var(--shadow-lg);
+  z-index: 999;
+}
+
+/* Link style inside opened dropdown */
+.nav-links.open .nav-link {
+  padding: 8px 12px;
+  white-space: nowrap;
 }
 
 .cart-btn {
@@ -624,15 +690,12 @@ footer p {
 
   .logo {
     font-size: 1.3rem;
-    flex-basis: 100%;
+    flex-basis: auto;
   }
 
+  /* hide full link row on small screens; use hamburger instead */
   .nav-links {
-    flex-basis: 100%;
-    flex-wrap: wrap;
-    gap: 12px;
-    justify-content: center;
-    order: 3;
+    display: none;
   }
 
   .nav-link {
@@ -649,9 +712,18 @@ footer p {
   }
 
   .nav-right {
-    flex-basis: 100%;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    order: 2;
+    flex-basis: auto;
+  }
+
+  /* show hamburger on small screens */
+  .hamburger {
+    display: inline-flex;
+    align-items: center;
     justify-content: center;
-    order: 4;
   }
 
   .cart-btn {
