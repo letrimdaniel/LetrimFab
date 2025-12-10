@@ -234,6 +234,7 @@ function toggleCart() {
     setTimeout(() => cartOverlay.classList.add("open"), 10);
   }
 }
+
 // Toggle mobile nav (hamburger)
 function toggleNav() {
   const links = document.querySelector('.nav-links');
@@ -258,6 +259,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 });
+
 function showToast(message) {
   toast.textContent = message;
   toast.classList.add("show");
@@ -267,4 +269,3 @@ function showToast(message) {
 // Initialize
 initializeCarousel();
 renderProducts();
-
