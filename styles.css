@@ -29,7 +29,7 @@ nav {
   background-color: white;
   padding: 1.2rem 5%;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
   box-shadow: var(--shadow-sm);
   position: sticky;
@@ -48,8 +48,10 @@ nav {
 
 .nav-links {
   display: flex;
-  gap: 25px;
+  gap: 12px;
   align-items: center;
+  /* ensure nav links appear before the cart on wider screens */
+  order: 2;
 }
 
 .nav-link {
@@ -66,8 +68,13 @@ nav {
 
 .nav-right {
   display: flex;
-  gap: 30px;
+  gap: 20px;
   align-items: center;
+  /* keep cart pinned to the far right by ordering after links */
+  margin-right: 0;
+  order: 3;
+  /* comfortable gap between the nav links and the cart on desktop */
+  margin-left: 36px;
 }
 
 /* Hamburger button */
@@ -106,12 +113,12 @@ nav {
 }
 
 .hamburger-inner::before {
-  content: '';
+  content: "";
   top: -9px;
 }
 
 .hamburger-inner::after {
-  content: '';
+  content: "";
   top: 9px;
 }
 
@@ -139,7 +146,7 @@ nav {
   background: var(--primary);
   color: white;
   border: none;
-  padding: 10px 20px;
+  padding: 8px 14px;
   border-radius: 4px;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -655,6 +662,11 @@ footer p {
     gap: 15px;
   }
 
+  /* slightly smaller gap on tablet widths */
+  .nav-right {
+    margin-left: 20px;
+  }
+
   .nav-link {
     font-size: 0.9rem;
   }
@@ -693,9 +705,20 @@ footer p {
     flex-basis: auto;
   }
 
-  /* hide full link row on small screens; use hamburger instead */
+  /* keep nav-links visible but hide only link items on small screens; keep cart visible */
   .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .nav-links .nav-link {
     display: none;
+  }
+
+  .nav-links .nav-cart {
+    display: inline-flex;
+    align-items: center;
   }
 
   .nav-link {
@@ -717,6 +740,7 @@ footer p {
     align-items: center;
     order: 2;
     flex-basis: auto;
+    margin-left: 0; /* remove extra gap on small screens */
   }
 
   /* show hamburger on small screens */
