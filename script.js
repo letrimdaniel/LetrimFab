@@ -234,7 +234,30 @@ function toggleCart() {
     setTimeout(() => cartOverlay.classList.add("open"), 10);
   }
 }
+// Toggle mobile nav (hamburger)
+function toggleNav() {
+  const links = document.querySelector('.nav-links');
+  const hamburger = document.querySelector('.hamburger');
+  if (!links) return;
+  links.classList.toggle('open');
+  const expanded = links.classList.contains('open');
+  if (hamburger) hamburger.setAttribute('aria-expanded', expanded);
+}
 
+// Close nav when a link is clicked (for mobile)
+document.addEventListener('DOMContentLoaded', () => {
+  const links = document.querySelectorAll('.nav-links .nav-link');
+  links.forEach((a) => {
+    a.addEventListener('click', () => {
+      const container = document.querySelector('.nav-links');
+      if (container && container.classList.contains('open')) {
+        container.classList.remove('open');
+        const hamburger = document.querySelector('.hamburger');
+        if (hamburger) hamburger.setAttribute('aria-expanded', 'false');
+      }
+    });
+  });
+});
 function showToast(message) {
   toast.textContent = message;
   toast.classList.add("show");
@@ -244,3 +267,4 @@ function showToast(message) {
 // Initialize
 initializeCarousel();
 renderProducts();
+
